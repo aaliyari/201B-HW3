@@ -4,12 +4,16 @@ files <- c(
 "ERR458493.fastq.gz.quant.counts",
 "ERR458494.fastq.gz.quant.counts",
 "ERR458495.fastq.gz.quant.counts",
+"ERR458496.fastq.gz.quant.counts",
+"ERR458497.fastq.gz.quant.counts",
 "ERR458500.fastq.gz.quant.counts",
 "ERR458501.fastq.gz.quant.counts",
-"ERR458502.fastq.gz.quant.counts"
+"ERR458502.fastq.gz.quant.counts",
+"ERR458503.fastq.gz.quant.counts",
+"ERR458504.fastq.gz.quant.counts"
 )
 
-labels=c("A", "B", "E", "C", "D", "F")
+labels=c("wt1", "wt2", "wt3", "wt4", "wt5", "mut1", "mut2", "mut3", "mut4", "mut5")
 
 data <- readDGE(files)
 
@@ -17,7 +21,7 @@ print(data)
 
 ###
 
-group <- c(rep("mut", 3), rep("wt", 3))
+group <- c(rep("mut", 5), rep("wt", 5))
 
 dge = DGEList(counts=data, group=group)
 dge <- estimateCommonDisp(dge)
